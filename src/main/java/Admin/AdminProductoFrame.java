@@ -1,8 +1,6 @@
 package Admin;
 
-import Edit.EditPacienteFrame;
 import Edit.EditProductoFrame;
-import Login.LoginFrame;
 import RegistroFrame.RegistroProducto;
 import ReporteFrame.ReporteProducto;
 
@@ -137,8 +135,9 @@ public class AdminProductoFrame extends JFrame {
         regresarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new AdminFrame().setVisible(true);
                 dispose();
+                new AdminFrame().setVisible(true);
+
             }
         });
 
@@ -149,7 +148,6 @@ public class AdminProductoFrame extends JFrame {
                     JOptionPane.showMessageDialog(AdminProductoFrame.this,"No hay Productos en el inventario","Trate otra vez",JOptionPane.ERROR_MESSAGE);
                 }else {
                     new ReporteProducto(Admin.listaProductos).setVisible(true);
-                    dispose();
                 }
             }
         });

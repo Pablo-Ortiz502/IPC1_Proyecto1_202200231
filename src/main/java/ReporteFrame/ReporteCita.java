@@ -1,18 +1,14 @@
 package ReporteFrame;
 
-import Admin.AdminDoctorFrame;
+
 import Cita.Cita;
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.LinkedList;
-import java.util.EventListener;
 
-import static com.sun.java.accessibility.util.SwingEventMonitor.addListSelectionListener;
 
 public class ReporteCita extends JFrame {
 
@@ -24,7 +20,7 @@ public class ReporteCita extends JFrame {
     public ReporteCita(LinkedList<Cita> listaCitas){
         this.listaCitas = listaCitas;
         regresar = new JButton("Regresar");
-        setTitle("Lista de Doctores");
+        setTitle("Lista de Citas");
         setSize(600, 300);
         setLocationRelativeTo(null);
         String[] columnNames = {"Nombre","Descripcion","Fecha"};
@@ -60,7 +56,6 @@ public class ReporteCita extends JFrame {
         regresar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new AdminDoctorFrame().setVisible(true);
                 dispose();
             }
         });

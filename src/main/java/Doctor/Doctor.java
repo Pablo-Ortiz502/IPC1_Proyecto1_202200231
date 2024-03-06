@@ -1,6 +1,5 @@
 package Doctor;
 
-import Admin.Admin;
 import Cita.Cita;
 
 import java.util.LinkedList;
@@ -63,21 +62,6 @@ public class Doctor {
     public void setListaPersonal(LinkedList<Cita> listaPersonal) {
         this.listaPersonal = listaPersonal;
     }
-
-    public void asignarHorario(){
-
-    }
-    public void verMas(){
-
-    }
-    public void atender(){
-
-    }
-    public void rechazar(){
-
-    }
-
-
 
 
 }

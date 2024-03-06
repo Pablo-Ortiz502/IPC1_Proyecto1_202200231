@@ -1,6 +1,5 @@
 package ReporteFrame;
 
-import Admin.AdminProductoFrame;
 import Producto.Producto;
 
 import javax.swing.*;
@@ -18,7 +17,7 @@ public class ReporteProducto extends JFrame {
     public ReporteProducto(LinkedList<Producto> listaProductos){
         this.listaProductos = listaProductos;
         regresar = new JButton("Regresar");
-        setTitle("Lista de pacientes");
+        setTitle("Lista de Productos");
         setSize(600, 300);
         setLocationRelativeTo(null);
         String[] columnNames = {"Nombre", "Precio", "Descripcion","Cantidad"};
@@ -56,7 +55,7 @@ public class ReporteProducto extends JFrame {
         regresar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dispose(); new AdminProductoFrame().setVisible(true);
+                dispose();
             }
         });
 

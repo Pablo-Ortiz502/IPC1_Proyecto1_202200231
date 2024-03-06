@@ -1,6 +1,5 @@
 package RegistroFrame;
 
-import Admin.AdminPacienteFrame;
 import Admin.Admin;
 import Cita.Cita;
 import Paciente.Paciente;
@@ -90,7 +89,6 @@ public class RegistroPacienteFrame extends JFrame {
                     LinkedList<Cita> listaCitas = new LinkedList<>();
                     Paciente paciente = new Paciente(nombre,apellido,contra,genero,edad,codigoPaciente(),listaCitas);
                     Admin.listaPacientes.add(paciente);
-                    new AdminPacienteFrame().setVisible(true);
                     JOptionPane.showMessageDialog(RegistroPacienteFrame.this, "Usuario creado con exito"+"su codigo es: "+Admin.listaPacientes.getLast().getCodigo(), "Bienvenido", JOptionPane.PLAIN_MESSAGE);
                     dispose();
 
@@ -104,7 +102,6 @@ public class RegistroPacienteFrame extends JFrame {
 
         cancelarButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new AdminPacienteFrame().setVisible(true);
                 dispose();
             }
         });

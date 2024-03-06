@@ -1,7 +1,5 @@
 package Edit;
 
-import Admin.AdminPacienteFrame;
-import Admin.AdminFrame;
 import Paciente.Paciente;
 
 import javax.swing.*;
@@ -96,7 +94,7 @@ public class EditPacienteFrame extends JFrame {
                     paciente.setNombre(nombre);
                     paciente.setApellidos(apellido);
 
-                    new AdminPacienteFrame().setVisible(true);
+
                     JOptionPane.showMessageDialog(EditPacienteFrame.this, "Usuario editado con exito", "Bienvenido", JOptionPane.PLAIN_MESSAGE);
                     dispose();
 
@@ -110,7 +108,7 @@ public class EditPacienteFrame extends JFrame {
         cancelarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new AdminPacienteFrame().setVisible(true);
+
                 dispose();
             }
         });

@@ -2,6 +2,7 @@ package Login;
 import Admin.AdminFrame;
 import Admin.Admin;
 import Doctor.DoctorFrame;
+import Paciente.PacienteFrame;
 import RegistroFrame.RegistroPacienteFrame;
 
 import javax.swing.*;
@@ -33,7 +34,7 @@ public class LoginFrame extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setResizable(false);
-        setLocationRelativeTo(null);
+
 
         loginButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -60,14 +61,16 @@ public class LoginFrame extends JFrame {
                             JOptionPane.showMessageDialog(LoginFrame.this, "Bienvenido", "Ingresado", JOptionPane.PLAIN_MESSAGE);
                             estado = true;
                             dispose();
+                            new PacienteFrame(Admin.listaPacientes.get(j).getCodigo(),Admin.listaPacientes,Admin.listaProductos,Admin.listaDoctores);
                         }
 
                     }
                     if (contra.equals(Admin.getContraAdmin()) && codigo.equals(Admin.getNombreAdmin())){// Administrador
                         JOptionPane.showMessageDialog(LoginFrame.this, "Bienvenido", "Ingresado", JOptionPane.PLAIN_MESSAGE);
                         estado = true;
-                        new AdminFrame().setVisible(true);
                         dispose();
+                        new AdminFrame().setVisible(true);
+
                     }
                     if(!estado){
                         JOptionPane.showMessageDialog(LoginFrame.this,"datos incorectos","Trate otra vez",JOptionPane.ERROR_MESSAGE);
@@ -81,7 +84,6 @@ public class LoginFrame extends JFrame {
         registrarButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 new RegistroPacienteFrame().setVisible(true);
-                dispose();
             }
 
         });

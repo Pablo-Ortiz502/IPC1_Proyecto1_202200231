@@ -21,23 +21,5 @@ public class Admin {
     public static int getCarnetAdmin() {return carnetAdmin;}
 
 
-    public void eliminarDoctor(){
-
-    }
-
-    public void mostrarReporte(){
-
-    }
-
-
-    public void eliminarPaciente(){
-
-    }
-
-    public void eliminarProrducto(){
-
-    }
-
-
 
 }

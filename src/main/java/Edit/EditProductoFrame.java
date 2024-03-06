@@ -1,7 +1,6 @@
 package Edit;
 
 import Admin.AdminProductoFrame;
-import Admin.Admin;
 import Producto.Producto;
 
 import javax.swing.*;

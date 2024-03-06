@@ -29,7 +29,7 @@ public class AdminFrame extends JFrame {
         doctorButton = new JButton("Doctores");
         pacienteButton = new JButton("Pacientes");
         productoButton = new JButton("Productos");
-        regresarButton = new JButton("Regresar");
+        regresarButton = new JButton("Salir");
 
         Box buttonBox1 = new Box(BoxLayout.X_AXIS);
         buttonBox1.add(Box.createHorizontalGlue());

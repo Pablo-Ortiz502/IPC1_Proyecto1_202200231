@@ -4,8 +4,6 @@ import Doctor.Doctor;
 import Paciente.Paciente;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -113,10 +111,13 @@ public class CrearCitaFrame extends JFrame {
                     if (doctor == null || doctor.isEmpty() || description == null || description.isEmpty()) {
                         JOptionPane.showMessageDialog(null, "Por favor llenar todos los campos", "Error", JOptionPane.ERROR_MESSAGE);
                     } else {
-                        JOptionPane.showMessageDialog(null, "Cita creada con " + doctor , "Exito", JOptionPane.INFORMATION_MESSAGE);
-                        Cita cita = new Cita(pacienteAcual.getNombre(),mes,dia,year,description);
-                        pacienteAcual.addLisataCita(cita);
+
+                        Cita cita = new Cita(pacienteAcual.getNombre()+" "+pacienteAcual.getApellidos(),mes,dia,year,description);
+                        Cita cita1 = new Cita("Dr. "+doctor,mes,dia,year,description);
+                        pacienteAcual.addLisataCita(cita1);
                         doctorSeleccionado(doctor,cita);
+                        JOptionPane.showMessageDialog(null, "Cita creada con " + "Dr."+doctor , "Exito", JOptionPane.INFORMATION_MESSAGE);
+                        dispose();
                     }
                 }
             });

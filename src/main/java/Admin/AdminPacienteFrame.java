@@ -2,7 +2,6 @@ package Admin;
 
 import Edit.EditPacienteFrame;
 
-import Login.LoginFrame;
 import RegistroFrame.RegistroPacienteFrame;
 import ReporteFrame.ReportePaciente;
 
@@ -121,7 +120,6 @@ public class AdminPacienteFrame extends JFrame {
                         if (codigo.equals(Admin.listaPacientes.get(i).getCodigo())){
                             estado = true;
                             new EditPacienteFrame(Admin.listaPacientes.get(i)).setVisible(true);
-                            dispose();
                         }
                     }
                     if(!estado){
@@ -147,8 +145,9 @@ public class AdminPacienteFrame extends JFrame {
         regresarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               new AdminFrame().setVisible(true);
-               dispose();
+                dispose();
+                new AdminFrame().setVisible(true);
+
             }
         });
     }

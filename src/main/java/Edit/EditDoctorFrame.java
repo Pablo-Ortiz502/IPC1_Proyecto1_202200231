@@ -1,7 +1,6 @@
 package Edit;
 
 
-import Admin.AdminDoctorFrame;
 import Doctor.Doctor;
 
 import javax.swing.*;
@@ -82,6 +81,8 @@ public class EditDoctorFrame extends JFrame {
         contraField.setText(doctor.getContra());
         edadSpinner.setValue(doctor.getEdad());
 
+        setLocationRelativeTo(null);
+
 
         for (int j = 0; j < especialidades.length;j++){
             if(doctor.getEspecialidad().equals(especialidades[j])){
@@ -121,7 +122,6 @@ public class EditDoctorFrame extends JFrame {
                     doctor.setNombre(nombre);
                     doctor.setApellidos(apellido);
 
-                    new AdminDoctorFrame().setVisible(true);
                     JOptionPane.showMessageDialog(EditDoctorFrame.this, "Usuario editado con exito", "Bienvenido", JOptionPane.PLAIN_MESSAGE);
                     dispose();
 
@@ -135,7 +135,6 @@ public class EditDoctorFrame extends JFrame {
         cancelarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new AdminDoctorFrame().setVisible(true);
                 dispose();
             }
         });

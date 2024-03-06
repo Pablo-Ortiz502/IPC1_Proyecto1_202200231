@@ -27,6 +27,9 @@ public class Paciente {
     }
 
     public String getNombre() {return nombre;}
+
+    public LinkedList<Cita> getListaCitas() {return listaCitas;}
+
     public void setNombre(String nombre) {this.nombre = nombre;}
     public String getApellidos() {return apellidos;}
     public void setApellidos(String apellidos) {this.apellidos = apellidos;}
@@ -41,18 +44,6 @@ public class Paciente {
 
     public void addLisataCita(Cita cita){
         listaCitas.add(cita);
-    }
-
-    public void generarCita(){
-
-    }
-
-    public void mostrarDoctores(){
-
-    }
-
-    public void mostrarHorarios(){
-
     }
 
 }

@@ -3,7 +3,6 @@ package Admin;
 import Edit.EditDoctorFrame;
 import RegistroFrame.RegistroDoctorFrame;
 import ReporteFrame.ReporteDoctor;
-import ReporteFrame.ReportePaciente;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -133,7 +132,6 @@ public class AdminDoctorFrame extends JFrame {
                         if (codigo.equals(Admin.listaDoctores.get(i).getCodigo())){
                             estado = true;
                             new EditDoctorFrame(Admin.listaDoctores.get(i)).setVisible(true);
-                            dispose();
                         }
                     }
                     if(!estado){
@@ -145,17 +143,12 @@ public class AdminDoctorFrame extends JFrame {
             }
         });
 
-        reporteButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new ReporteDoctor(Admin.listaDoctores).setVisible(true);
-            }
-        });
 
         regresarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new AdminFrame().setVisible(true);
+                dispose();
+                 new AdminFrame().setVisible(true);
             }
         });
     }

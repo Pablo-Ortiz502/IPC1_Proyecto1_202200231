@@ -28,7 +28,7 @@ public class DoctorFrame extends JFrame {
         this.codio = codigo;
         this.listaDoctores = listaDoctores;
         citasButton = new JButton("Citas");
-        regresarButton = new JButton("Regresar");
+        regresarButton = new JButton("Salir");
         editarPerfil = new JButton("Editar Perfil");
 
         Box buttonBox1 = new Box(BoxLayout.X_AXIS);
@@ -68,7 +68,6 @@ public class DoctorFrame extends JFrame {
                       if(listaDoctores.get(i).getListaPersonal().isEmpty()){
                           JOptionPane.showMessageDialog(DoctorFrame.this,"No hay citas registradas","Trate otra vez",JOptionPane.ERROR_MESSAGE);
                       }else {
-                          dispose();
                           new ReporteCita(listaDoctores.get(i).getListaPersonal()).setVisible(true);
                       }
                     }
@@ -82,7 +81,6 @@ public class DoctorFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 for (int i=0; i<listaDoctores.size();i++){
                     if(codigo.equals(listaDoctores.get(i).getCodigo())){
-                        dispose();
                         new EditDoctorFrame(listaDoctores.get(i)).setVisible(true);
                     }
                 }
